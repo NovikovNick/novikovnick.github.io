@@ -1,27 +1,173 @@
 <!doctype html>
-<html lang="en">
-  <head>
-    <!-- Required meta tags -->
+<html lang="ru">
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="MetalHeart">
+    <title>Платформер</title>
 
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
 
-    <title>Hello, world!</title>
-  </head>
-  <body>
-    <h1>Hello, world!</h1>
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+        }
 
-    <!-- Optional JavaScript; choose one of the two! -->
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+    </style>
 
-    <!-- Option 1: Bootstrap Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <!-- Custom styles -->
+    <link href="css/main.css" rel="stylesheet">
+</head>
+<body>
 
-    <!-- Option 2: Separate Popper and Bootstrap JS -->
-    <!--
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
-    -->
-  </body>
+    <header>
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Purgatorium</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="#">Обзор</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#mechanics-feature">Особенности</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#ulta-feature">Ульта</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#disign-feature">Дизайн</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./balance.html">Баланс</a>
+                        </li>
+                        <!--<li class="nav-item"><a class="nav-link" href="#">Дневник разработки</a></li>-->
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Marketing messaging and featurettes
+        ================================================== -->
+        <!-- Wrap the rest of the page in another container to center all the content. -->
+
+        <div class="container marketing">
+
+            <div class="p-5 mb-4 bg-light rounded-3">
+                <div class="container-fluid py-5">
+                    <h1 class="display-5 fw-bold">Purgatorium</h1>
+                    <p class="col-md-8 fs-4">Файтинг с элементами 2D-платформера в сеттинге темного фентези. </p>
+                    <p>
+                        <ul>
+                            <li>Боевая система вдохновленная файтингами</li>
+                            <li>Построение собственной ульты</li>
+                            <li>Игра по сети</li>
+                        </ul>
+                    </p>
+                    <a class="btn btn-primary btn-lg" type="button" href="download/platformer-0.0.6-release.zip" download>Скачать билд</a>
+                </div>
+            </div>
+
+            <!-- START THE FEATURETTES -->
+            <hr id="mechanics-feature" class="featurette-divider">
+
+            <section class="row featurette">
+                <div class="col-md-7">
+                    <h2 class="featurette-heading">Особенности</h2>
+
+                    <p>
+                        <b>Боевая система вдохновленная файтингами</b>
+                        - каждый удар имеет свою фрейм дату. Комбинации до -50% здоровья. Миксапы из нижних, верхних ударов и бросков.
+                    </p>
+                    <p>
+                        <b>Построение собственной уникальной ульты</b>
+                        - игрок сам выбирает усиление и плату, которую он за нее отдаст. Так же он может накладывать на себя условия, при соблюдении которых он будет получать преимущество.
+                    </p>
+                    <p>
+                        <b>Платформа</b>
+                        - Windows
+                    </p>
+                    <p>
+                        <b>Движок</b>
+                        - Unity
+                    </p>
+                    <p>
+                        <b>Core</b>
+                        - пишется на C/C++ и подключаются к движку как .dll
+                    </p>
+                    <p>
+                        <b>Сеть</b>
+                        - netcode основанный на rollback'е, а не на delay. P2P, UDP, библиотека GGPO.
+                    </p>
+
+                </div>
+                <div class="col-md-5">
+                    <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"></rect><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg>
+
+                </div>
+            </section>
+
+            <hr id="ulta-feature" class="featurette-divider">
+
+            <section class="row featurette">
+                <div class="col-md-7 order-md-2">
+                    <h2 class="featurette-heading">Построение собственной уникальной ульты</h2>
+                    <p class="lead">Тут будет куча припмеров и кнопка подробнее</p>
+                    <a class="btn btn-primary btn-lg" type="button" href="./balance.html">Подробнее</a>
+                </div>
+                <div class="col-md-5 order-md-1">
+                    <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"></rect><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg>
+
+                </div>
+            </section>
+
+            <hr id="disign-feature" class="featurette-divider">
+
+            <section class="row featurette">
+                <div class="col-md-7 order-md-2">
+                    <h2 class="featurette-heading">Дизайн</h2>
+                    <p class="lead">Ну, как видно по сайту, дизайна пока нет :(</p>
+                </div>
+                <div class="col-md-5 order-md-1">
+                    <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"></rect><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg>
+
+                </div>
+            </section>
+
+            <hr class="featurette-divider">
+
+            <!-- /END THE FEATURETTES -->
+
+        </div><!-- /.container -->
+        <!-- FOOTER -->
+        <footer class="container">
+            <p>2023</p>
+        </footer>
+    </main>
+
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery-3.6.4.min.js"></script>
+    <script>
+        $('#primary-btn').click(function () {
+            alert("Бонус получен!");
+        });
+    </script>
+</body>
 </html>
