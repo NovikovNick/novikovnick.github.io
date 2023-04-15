@@ -41,21 +41,20 @@
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <ul class="navbar-nav me-auto mb-2 mb-md-0">
                         <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="#">Обзор</a>
+                            <a class="nav-link" aria-current="page" href="index.html#">Обзор</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#mechanics-feature">Особенности</a>
+                            <a class="nav-link" href="index.html#mechanics-feature">Особенности</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#ulta-feature">Ульта</a>
+                            <a class="nav-link" href="index.html#ulta-feature">Билд персонажа</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#disign-feature">Дизайн</a>
+                            <a class="nav-link" href="index.html#disign-feature">Дизайн</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="./balance.html">Баланс</a>
                         </li>
-                        <!--<li class="nav-item"><a class="nav-link" href="#">Дневник разработки</a></li>-->
                     </ul>
                 </div>
             </div>
@@ -63,6 +62,7 @@
     </header>
 
     <main>
+
         <!-- Marketing messaging and featurettes
         ================================================== -->
         <!-- Wrap the rest of the page in another container to center all the content. -->
@@ -72,16 +72,41 @@
             <div class="p-5 mb-4 bg-light rounded-3">
                 <div class="container-fluid py-5">
                     <h1 class="display-5 fw-bold">Purgatorium</h1>
-                    <p class="col-md-8 fs-4">Файтинг с элементами 2D-платформера в сеттинге темного фентези. </p>
-                    <p>
-                        <ul>
-                            <li>Боевая система вдохновленная файтингами</li>
-                            <li>Построение собственной ульты</li>
-                            <li>Игра по сети</li>
-                        </ul>
-                    </p>
-                    <a class="btn btn-primary btn-lg" type="button" href="download/platformer-0.0.6-release.zip" download>Скачать билд</a>
+                    <p class="col-md-8 fs-4">Сессионный 2D-платформер с упором в боевую систему.</p>
+                    <p>Вместо фиксированного ростера уже готовых бойцов со своими способностями, игроки сами настраивают сильные и слабые стороны своего героя. Перед каждой сессией можно поменять билд и выбрать новые способности. Основные режимы - это 1x1, 2x2 и deathmatch до 4 игроков. Цель - победить как можно больше других игроков, попутно уничтожая мобов и активируя выбранные игроком условия для усиления. Игрок сам выбирает от каких действий он получает опыт, настраивая тем самым прокачку под себя. Но с ростом уровня увеличиваются и уязвимости. Разгaдать какими уязвимостями заплатил противник за свои усиления и какие условия выбрал - это ключ к победе!</p>
+                    <a class="btn btn-primary btn-lg" type="button" href="https://drive.google.com/file/d/1Qxy_20GPr0E-DedkP4k_QAm5Tesfs3Z2/view?usp=sharing" download>Скачать билд</a>
                 </div>
+            </div>
+
+            <!-- images -->
+            <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img class="bd-placeholder-img" width="100%" height="100%" src="img/fst.jpg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#242423" /></img>
+                    </div>
+                    <div class="carousel-item">
+                        <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
+                            <rect width="100%" height="100%" fill="#242423" />
+
+                            <img src="img/movement-protorype.gif" focusable="false" />
+                        </svg>
+
+                    </div>
+
+                    
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
             </div>
 
             <!-- START THE FEATURETTES -->
@@ -109,7 +134,7 @@
                     </p>
                     <p>
                         <b>Core</b>
-                        - пишется на C/C++ и подключаются к движку как .dll
+                        - пишется на C/C++ и подключается к движку как .dll
                     </p>
                     <p>
                         <b>Сеть</b>
@@ -127,8 +152,8 @@
 
             <section class="row featurette">
                 <div class="col-md-7 order-md-2">
-                    <h2 class="featurette-heading">Построение собственной уникальной ульты</h2>
-                    <p class="lead">Тут будет куча припмеров и кнопка подробнее</p>
+                    <h2 class="featurette-heading">Настройка способностей, усилений, уйязвимостей и условий</h2>
+                    <p class="lead">Тут будет несколько примеров</p>
                     <a class="btn btn-primary btn-lg" type="button" href="./balance.html">Подробнее</a>
                 </div>
                 <div class="col-md-5 order-md-1">
