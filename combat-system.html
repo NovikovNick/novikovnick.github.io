@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="MetalHeart">
+    <title>Платформер</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+    </style>
+
+    <!-- Custom styles -->
+    <link href="css/main.css" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Purgatorium</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="index.html#">Обзор</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html#mechanics-feature">Особенности</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html#ulta-feature">Билд персонажа</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html#disign-feature">Дизайн</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./combat-system.html">Боевая система</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+
+        <div class="container marketing">
+
+            <h1>Основа боевой системы</h1>
+            <div class="row justify-content-start">
+                <div class="col-8">
+                    <p>
+                        В основе лежит 3 удара - слабый быстрый, сильный сверху и сильный снизу. Слабый быстрый удар сбивает удар сверху из-за скорости. Удар сверху перебивает удар снизу из-за выгодной позиции. А удар снизу имеет приоритет над слабым ударом из-за того, что персонаж пригибается и тем самым как-бы подныривает под быстрый удар. Другими словами в основе лежит камень-ножницы-бумага.
+                    </p>
+                    <p>
+                        Так же есть два типа блока:
+                        <ul>
+                            <li>Обычный блок в стойке - блокирует слабый удар и удар сверху</li>
+                            <li>Нижний блок в присяде - блокирует слабый удар и удар снизу</li>
+                        </ul>
+                    </p>
+                    <p>
+                        Ниже таблица показыает урон здоровью в процентах - Damage и Chip damage(урон в блок). А также фреймдату - сколько кадров анимации занимает каждaя фаза удара.
+                    </p>
+                </div>
+                <div class="col-4">
+                    <img src="img/attacks.jpeg" class="rounded" width="100%"/>
+                </div>
+            </div>
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Move</th>
+                        <th scope="col">Input</th>
+                        <th scope="col">Damage</th>
+                        <th scope="col">Chip damage(урон в блок)</th>
+                        <th scope="col">Start-up</th>
+                        <th scope="col">Action</th>
+                        <th scope="col">Recovery</th>
+                        <th scope="col">Block stun</th>
+                        <th scope="col">Hit stun</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Быстрый слабый удар</td>
+                        <td>ЛКМ</td>
+                        <td>2%</td>
+                        <td>0.5%</td>
+                        <td>7</td>
+                        <td>2</td>
+                        <td>15</td>
+                        <td>5</td>
+                        <td>15</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">2</th>
+                        <td>Сильный удар сверху</td>
+                        <td>🠔 + ЛКМ</td>
+                        <td>10%</td>
+                        <td>2%</td>
+                        <td>14</td>
+                        <td>2</td>
+                        <td>15</td>
+                        <td>5</td>
+                        <td>15</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">3</th>
+                        <td>Сильный удар снизу</td>
+                        <td>🠗 + ЛКМ</td>
+                        <td>10%</td>
+                        <td>2%</td>
+                        <td>14</td>
+                        <td>2</td>
+                        <td>15</td>
+                        <td>5</td>
+                        <td>15</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">4</th>
+                        <td>Блок</td>
+                        <td>ПКМ</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>0</td>
+                        <td>∞</td>
+                        <td>∞</td>
+                        <td>-</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">5</th>
+                        <td>Нижний блок</td>
+                        <td>🠗 + ПКМ</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>0</td>
+                        <td>∞</td>
+                        <td>∞</td>
+                        <td>-</td>
+                        <td>-</td>
+                    </tr>
+                </tbody>
+            </table>
+            <h1>Конструктор спецприемов</h1>
+            <p>
+                TODO...
+            <p>
+
+
+                <hr class="featurette-divider">
+
+
+        </div><!-- /.container -->
+        <!-- FOOTER -->
+        <footer class="container">
+            <p>2023</p>
+        </footer>
+    </main>
+
+
+    <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+
+
+</body>
+</html>
