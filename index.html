@@ -7,24 +7,11 @@
     <meta name="author" content="MetalHeart">
     <title>Платформер</title>
 
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+
     <!-- Bootstrap core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-
-    <style>
-        .bd-placeholder-img {
-            font-size: 1.125rem;
-            text-anchor: middle;
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            user-select: none;
-        }
-
-        @media (min-width: 768px) {
-            .bd-placeholder-img-lg {
-                font-size: 3.5rem;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="css/bootstrap.min.css" >
+    <link rel="stylesheet" href="css/font-awesome.min.css">
 
     <!-- Custom styles -->
     <link href="css/main.css" rel="stylesheet">
@@ -32,167 +19,129 @@
 <body>
 
     <header>
-        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="#">Purgatorium</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarCollapse">
-                    <ul class="navbar-nav me-auto mb-2 mb-md-0">
-                        <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="index.html#">Обзор</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="index.html#mechanics-feature">Особенности</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="index.html#ulta-feature">Билд персонажа</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="index.html#disign-feature">Дизайн</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="./combat-system.html">Боевая система</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
+        
     </header>
+    <div class="container-fluid">
+        <div class="row">
 
-    <main>
+            <!-- MENU -->
 
-        <!-- Marketing messaging and featurettes
-        ================================================== -->
-        <!-- Wrap the rest of the page in another container to center all the content. -->
+            <div class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse text-white bg-dark">
 
-        <div class="container marketing">
 
-            <div class="p-5 mb-4 bg-light rounded-3">
-                <div class="container-fluid py-5">
-                    <h1 class="display-5 fw-bold">Purgatorium</h1>
-                    <p class="col-md-8 fs-4">Сессионный 2D-платформер с упором в боевую систему.</p>
-                    <p>Вместо фиксированного ростера уже готовых бойцов со своими способностями, игроки сами настраивают сильные и слабые стороны своего героя. Перед каждой сессией можно поменять билд и выбрать новые способности. Основные режимы - это 1x1, 2x2 и deathmatch до 4 игроков. Цель - победить как можно больше других игроков, попутно уничтожая мобов и активируя выбранные игроком условия для усиления. Игрок сам выбирает от каких действий он получает опыт, настраивая тем самым прокачку под себя. Но с ростом уровня увеличиваются и уязвимости. Разгaдать какими уязвимостями заплатил противник за свои усиления и какие условия выбрал - это ключ к победе!</p>
-                    <a class="btn btn-primary btn-lg" type="button" href="https://drive.google.com/file/d/1HrF15LDn58b1YQSvSYgbse6RFNse0Vgv/view?usp=sharing" download>Скачать билд</a>
+                <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+                    <img width="180" height="180" src="https://avatars.githubusercontent.com/u/8244666?v=4"
+                         class="d-block mx-auto mb-4 rounded-circle" alt="MetalHeart">
+                </a>
+                <hr>
+                <ul class="nav nav-pills flex-column mb-auto">
+                    <li>
+                        <a href="#" class="nav-link text-white">
+                            Главная
+                        </a>
+                    </li>
+                   <!-- <li>
+                        <a href="#ue5-fighing-prototype" class="nav-link text-white">
+                            Прототип сетевого файтинга на UE5
+                        </a>
+                    </li>-->
+                    <li>
+                        <a href="#platformer-prototype" class="nav-link text-white">
+                            Библиотека для сетевого платформера на с++
+                        </a>
+                    </li>
+
+                </ul>
+
+                <div class="py-3 sidebar-footer text-center">
+                    <hr>
+                    <a href="https://github.com/NovikovNick" aria-label="github" class="" target="_blank" rel="noopener">
+                        <i class="fa fa-github" aria-hidden="true"></i>
+                    </a>
+                    <a href="https://www.youtube.com/@MetalHeart_" aria-label="youtube" class="ms-3" target="_blank" rel="noopener">
+                        <i class="fa fa-youtube-play" aria-hidden="true"></i>
+                    </a>
+                    <a href="https://vk.com/id134288675" aria-label="youtube" class="ms-3" target="_blank" rel="noopener">
+                        <i class="fa fa-vk" aria-hidden="true"></i>
+                    </a>
                 </div>
             </div>
 
-            <!-- images -->
-            <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-indicators">
-                    <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                    <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                </div>
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img class="bd-placeholder-img" width="100%" height="100%" src="img/fst.jpg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#242423" /></img>
+            <!-- MAIN -->
+            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+
+                <div class="p-5 mb-4 bg-light rounded-3">
+                    <div class="container-fluid py-5">
+                        <h4 class="display-5 fw-bold">Привет!</h4>
+                        <p class="col-md-8 fs-4">Меня зовут Новиков Николай и я занимаюсь разработкой программного обеспечения более 9 лет.</p>
+                        <p><b>Microservices Architecture</b>: Java 7-11, Spring, JPA+Hibernate, Gradle/Maven, Docker, PostgreSQL, Redis, RabbitMQ</p>
+                        <p><b>Gamedev</b>: С++17, С++20, CMake, Protobuf, GGPO, Unreal Engine 5.</p>
                     </div>
-                    <div class="carousel-item">
-                        <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
-                            <rect width="100%" height="100%" fill="#242423" />
+                </div>
+                <h4 class="display-5 fw-bold text-center py-4">Мои проекты</h4>
+                <!-- START THE FEATURETTES -->
+                <!--<hr id="ue5-fighing-prototype" class="featurette-divider">
 
-                            <img src="img/movement-protorype.gif" focusable="false" />
-                        </svg>
-
+                <section class="row featurette">
+                    <div class="col-md-7">
+                        <h2 class="featurette-heading">Прототип сетевого файтинга на Unreal Engine 5</h2>
+                        <p>
+                            ...еще в процессе
+                        </p>
+                        <p>
+                            <b>Движок</b>
+                            - Unreal Engine 5
+                        </p>
+                        <p>
+                            <b>Core</b>
+                            - Собрал библиотеку для сетевого платформера как .dll и подключил к UE5 в виде отдельного плагина.
+                        </p>
                     </div>
+                    <div class="col-md-5">
+                        <img src="img/UE5-fighting.gif" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false" />
+                    </div>
+                </section>-->
 
-                    
-                </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
-            </div>
+                <hr id="platformer-prototype" class="featurette-divider">
 
-            <!-- START THE FEATURETTES -->
-            <hr id="mechanics-feature" class="featurette-divider">
-
-            <section class="row featurette">
-                <div class="col-md-7">
-                    <h2 class="featurette-heading">Особенности</h2>
-
-                    <p>
-                        <b>Боевая система вдохновленная файтингами</b>
-                        - каждый удар имеет свою фрейм дату. Комбинации до -50% здоровья. Миксапы из нижних, верхних ударов и бросков.
-                    </p>
-                    <p>
-                        <b>Построение собственной уникальной ульты</b>
-                        - игрок сам выбирает усиление и плату, которую он за нее отдаст. Так же он может накладывать на себя условия, при соблюдении которых он будет получать преимущество.
-                    </p>
-                    <p>
-                        <b>Платформа</b>
-                        - Windows
-                    </p>
-                    <p>
-                        <b>Движок</b>
-                        - Unity
-                    </p>
-                    <p>
-                        <b>Core</b>
-                        - пишется на C/C++ и подключается к движку как .dll
-                    </p>
-                    <p>
-                        <b>Сеть</b>
-                        - netcode основанный на rollback'е, а не на delay. P2P, UDP, библиотека GGPO.
-                    </p>
-
-                </div>
-                <div class="col-md-5">
-                    <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"></rect><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg>
-
-                </div>
-            </section>
-
-            <hr id="ulta-feature" class="featurette-divider">
-
-            <section class="row featurette">
-                <div class="col-md-7 order-md-2">
-                    <h2 class="featurette-heading">Боевая система и конструктор спецприемов</h2>
-                    <p class="lead">Идея в том, чтобы  изменить боевую систему файтинга заменив фиксированные спецприемы на кастомные техники, которые игроки сами составляют из конструктора.</p>
-                    <a class="btn btn-primary btn-lg" type="button" href="./combat-system.html">Подробнее</a>
-                </div>
-                <div class="col-md-5 order-md-1">
-                    <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"></rect><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg>
-
-                </div>
-            </section>
-
-            <hr id="disign-feature" class="featurette-divider">
-
-            <section class="row featurette">
-                <div class="col-md-7 order-md-2">
-                    <h2 class="featurette-heading">Дизайн</h2>
-                    <p class="lead">Ну, как видно по сайту, дизайна пока нет :(</p>
-                </div>
-                <div class="col-md-5 order-md-1">
-                    <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"></rect><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg>
-
-                </div>
-            </section>
-
-            <hr class="featurette-divider">
-
-            <!-- /END THE FEATURETTES -->
-
-        </div><!-- /.container -->
-        <!-- FOOTER -->
-        <footer class="container">
-            <p>2023</p>
-        </footer>
-    </main>
-
+                <section class="row featurette">
+                    <div class="col-md-7 order-md-2">
+                        <h2 class="featurette-heading">Библиотека для сетевого платформера на с++</h2>
+                        <p>Библиотека создавалась как Proof of Concept использования Rollback Network для компенсации лага в action играх. Сетевая часть реализована c использованием <a href="https://www.ggpo.net/">GGPO</a>. Для поддержки детерминированого состояния игры подключена <a href="https://github.com/MikeLankamp/fpm">библиотека с фиксированной точкой</a>. Сериализация/Десериализация выполнена с помощью Protobuf. Для отладки добавлен упрощенный GUI на SFML+ImGui.</p>
+                        <p>
+                            <b>Пакетный менеджер</b>
+                            - часть зависимостей загружается через vcpkg
+                        </p>
+                        <p>
+                            <b>Сборка</b>
+                            - Cmake собирает библиотеку в трех вариантах:
+                            <ul>
+                                <li><b>sync</b> - урезанный функционал, только логика платформера без поддержки сети. Tickrate задается вызовом метода update, тем самым привязываясь к framerate</li>
+                                <li><b>async</b> - урезанный функционал. Тоже только логика платформера без сети, но tickrate фиксированный и задается перед стартом сессии. Метод update вызывается библиотекой в отдельном потоке.</li>
+                                <li><b>ggpo</b> - полная версия с p2p подключением и обходом NAT</li>
+                            </ul>
+                            Каждый вариант собирается как dll, плюс дополнительно exe-файл с примером использования. Итого 6 файлов. 
+                        </p>
+                        <p>
+                            <b>CI/CD</b>
+                            - запуск unit тестов настроен через github
+                        </p>
+                        <a href="https://github.com/NovikovNick/platformer-prototype" aria-label="github" class="order-3" target="_blank" rel="noopener">
+                            Исходники библиотеки
+                        </a>
+                    </div>
+                    <div class="col-md-5 order-md-1">
+                        <img src="img/platformer-prototype.gif" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false" />
+                    </div>
+                </section>
+                <hr class="featurette-divider">
+                <!-- /END THE FEATURETTES -->
+            </main>
+        </div>
+    </div><!-- /.container -->
 
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/jquery-3.6.4.min.js"></script>
-    <script>
-        $('#primary-btn').click(function () {
-            alert("Бонус получен!");
-        });
-    </script>
+
 </body>
 </html>
