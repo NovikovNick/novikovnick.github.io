@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="MetalHeart">
-    <title>Платформер</title>
+    <title>Новиков Николай, программист</title>
 
     <link rel="icon" type="image/x-icon" href="favicon.ico">
 
@@ -21,7 +21,7 @@
     <header>
         
     </header>
-    <div class="container-fluid">
+    <div class="container-fluid bg-dark">
         <div class="row">
 
             <!-- MENU -->
@@ -70,7 +70,7 @@
             <!-- MAIN -->
             <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
 
-                <div class="p-5 mb-4 bg-light rounded-3">
+                <div class="p-5 bg-dark">
                     <div class="container-fluid py-5">
                         <h4 class="display-5 fw-bold">Привет!</h4>
                         <p class="col-md-8 fs-4">Меня зовут Новиков Николай и я занимаюсь разработкой программного обеспечения более 9 лет.</p>
@@ -105,8 +105,9 @@
                 <hr id="platformer-prototype" class="featurette-divider">
 
                 <section class="row featurette">
+                    <h2 class="featurette-heading">Библиотека для сетевого платформера на с++</h2>
+
                     <div class="col-md-7 order-md-2">
-                        <h2 class="featurette-heading">Библиотека для сетевого платформера на с++</h2>
                         <p>Библиотека создавалась как Proof of Concept использования Rollback Network для компенсации лага в action играх. Сетевая часть реализована c использованием <a href="https://www.ggpo.net/">GGPO</a>. Для поддержки детерминированого состояния игры подключена <a href="https://github.com/MikeLankamp/fpm">библиотека с фиксированной точкой</a>. Сериализация/Десериализация выполнена с помощью Protobuf. Для отладки добавлен упрощенный GUI на SFML+ImGui.</p>
                         <p>
                             <b>Пакетный менеджер</b>
@@ -117,10 +118,10 @@
                             - Cmake собирает библиотеку в трех вариантах:
                             <ul>
                                 <li><b>sync</b> - урезанный функционал, только логика платформера без поддержки сети. Tickrate задается вызовом метода update, тем самым привязываясь к framerate</li>
-                                <li><b>async</b> - урезанный функционал. Тоже только логика платформера без сети, но tickrate фиксированный и задается перед стартом сессии. Метод update вызывается библиотекой в отдельном потоке.</li>
+                                <li><b>async</b> - тоже только логика платформера без сети, но tickrate фиксированный и задается перед стартом сессии. Метод update вызывается библиотекой в отдельном потоке.</li>
                                 <li><b>ggpo</b> - полная версия с p2p подключением и обходом NAT</li>
                             </ul>
-                            Каждый вариант собирается как dll, плюс дополнительно exe-файл с примером использования. Итого 6 файлов. 
+                            Каждый вариант собирается как dll, плюс дополнительно exe-файл с примером использования. Итого 6 файлов.
                         </p>
                         <p>
                             <b>CI/CD</b>
@@ -130,7 +131,7 @@
                             Исходники библиотеки
                         </a>
                     </div>
-                    <div class="col-md-5 order-md-1">
+                    <div class="col-md-5 py-2 ">
                         <img src="img/platformer-prototype.gif" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false" />
                     </div>
                 </section>

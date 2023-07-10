@@ -78,16 +78,13 @@ body {
 /*
  * Sidebar
  */
-
 .sidebar {
+    min-width: 200px;
     position: fixed;
     top: 0;
-    /* rtl:raw:
-  right: 0;
-  */
     bottom: 0;
-    /* rtl:remove */
     left: 0;
+    background: radial-gradient(circle, #494d61 0%, #1d1f27 100%);
     z-index: 100; /* Behind the navbar */
     padding: 48px 0 0; /* Height of navbar */
     box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
@@ -132,8 +129,6 @@ body {
     text-transform: uppercase;
 }
 
-
-
 .sidebar-footer a {
     color: white;
     text-decoration: none;
@@ -146,4 +141,9 @@ body {
     position: absolute;
     width: 100%;
     bottom: 0;
+}
+
+/***/
+.bg-dark {
+    color: #ccc;
 }
