@@ -1,0 +1,122 @@
+---
+import ColorThemeSwitcher from "./color_theme_switcher.astro";
+import SocialGithub from "./social_github.astro";
+
+const pages = [
+    //{ href: "/games", title: "Игры" },
+    //{ href: "/prototypes", title: "Прототипы" },
+    //{ href: "/posts", title: "Статьи" },
+    //{ href: "/resume", title: "Резюме" },
+];
+const activePageIndex = 0;
+
+const displayGuardClass = "d-lg-none";
+---
+
+<header
+    class="navbar navbar-expand-md navbar-dark bd-navbar sticky-top bg-dark"
+>
+    <nav class="container-xxl bd-gutter flex-wrap flex-lg-nowrap">
+        <div class={displayGuardClass} style="width: 2.25rem;"></div>
+
+        <!--a class="navbar-brand p-0 ms-4" href="/">
+            <img
+                width="60"
+                height="60"
+                src="https://avatars.githubusercontent.com/u/8244666?v=4"
+                class="d-block mx-auto rounded-circle"
+                alt="MetalHeart"
+            />
+        </a-->
+
+        <button
+            class={"navbar-toggler d-flex order-3 p-2 " + displayGuardClass}
+            type="button"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#bdNavbar"
+            aria-controls="bdNavbar"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+        >
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="32"
+                height="32"
+                fill="currentColor"
+                class="bi bi-list"
+                viewBox="0 0 16 16"
+            >
+                <path
+                    fill-rule="evenodd"
+                    d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"
+                ></path>
+            </svg>
+        </button>
+
+        <div
+            class="offcanvas-lg offcanvas-end flex-grow-1"
+            id="bdNavbar"
+            aria-labelledby="bdNavbarOffcanvasLabel"
+        >
+            <div class="offcanvas-header px-4 pb-0">
+                <h5
+                    class="offcanvas-title text-white"
+                    id="bdNavbarOffcanvasLabel"
+                >
+                    Новиков Николай
+                </h5>
+                <button
+                    type="button"
+                    class="btn-close btn-close-white"
+                    data-bs-dismiss="offcanvas"
+                    aria-label="Close"
+                    data-bs-target="#bdNavbar"></button>
+            </div>
+
+            <div class="offcanvas-body p-4 pt-0 p-lg-0">
+                <!--hr class={"text-white-50 " + displayGuardClass} /-->
+                <ul class="navbar-nav flex-row flex-wrap bd-navbar-nav">
+                    {
+                        pages.map((page, i) => {
+                            const className =
+                                i === activePageIndex ? "active" : "";
+
+                            return (
+                                <li class="nav-item col-6 col-lg-auto">
+                                    <a
+                                        class={
+                                            "nav-link py-2 px-0 px-lg-2 " +
+                                            className
+                                        }
+                                        href={page.href}
+                                        onclick="ga('send', 'event', 'Navbar', 'Community links', 'Icons');"
+                                    >
+                                        {page.title}
+                                    </a>
+                                </li>
+                            );
+                        })
+                    }
+                </ul>
+
+                <hr class={"text-white-50 " + displayGuardClass} />
+
+                <ul class="navbar-nav flex-row flex-wrap ms-md-auto pr-2">
+                    <li class="nav-item col-6 col-lg-auto"><SocialGithub /></li>
+
+                    <!--li class="nav-item py-2 py-lg-1 col-12 col-lg-auto">
+                        <div
+                            class="vr d-none d-lg-flex h-100 mx-lg-2 text-white"
+                        >
+                        </div>
+                        <hr class="d-lg-none my-2 text-white-50" />
+                    </li-->
+
+                    <!--li class="nav-item dropdown">
+                        <ColorThemeSwitcher />
+                    </li-->
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>

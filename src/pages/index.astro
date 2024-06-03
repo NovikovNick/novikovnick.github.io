@@ -1,0 +1,14 @@
+---
+import Layout from "../layouts/Layout.astro";
+import GreetingJambotron from "../components/greeting_jumbotron.astro";
+import ExperienceTimeline from "../components/experience_timeline.jsx";
+
+const pageTitle = "Новиков Николай | Backend разработчик";
+const pageDescription =
+	"Реализация серверных приложений на С++ и Java для сайтов и игр";
+---
+
+<Layout pageTitle={pageTitle} , pageDescription={pageDescription}>
+	<GreetingJambotron />
+	<ExperienceTimeline client:load />
+</Layout>
