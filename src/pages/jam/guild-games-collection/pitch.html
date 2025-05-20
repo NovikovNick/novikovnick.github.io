@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Investigate Simulator - Питч</title>
+    <title>Investigation Simulator - Питч</title>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
@@ -106,7 +106,7 @@
     <!-- Hero Section -->
     <section class="hero-section text-center mb-5">
         <div class="container">
-            <h1 class="display-4 fw-bold mb-4">Investigate Simulator</h1>
+            <h1 class="display-4 fw-bold mb-4">Investigation Simulator</h1>
             <p class="lead mb-4">Симулятор расследований с механикой детективной доски</p>
             <!--div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
                 <button type="button" class="btn btn-danger btn-lg px-4 gap-3">Демо-версия</button>
@@ -119,14 +119,14 @@
     <section class="container mb-5">
         <div class="row">
             <div class="col-lg-6">
-                <h2 class="fw-bold mb-4">Концепция</h2>
-                <p class="lead">Симулятор расследований, где игрок выступает в роли детектива, собирая улики и выстраивая связи на интерактивной детективной доске (Evidence Board).</p>
+                <h2 class="fw-bold mb-4">Описание</h2>
+                <p class="lead"><b>Симулятор расследований, где игрок выступает в роли детектива, собирая улики и выстраивая связи на интерактивной детективной доске (Evidence Board).</b></p>
                 <p>Основная механика вращается вокруг четырех ключевых элементов:</p>
                 <ul class="list-unstyled">
                     <li class="mb-2"><span class="badge bg-danger me-2">Зацепки (Clue)</span> Факты, предметы, показания свидетелей. На доске отображаются как фото или записки.</li>
                     <li class="mb-2"><span class="badge bg-danger me-2">Связи (Connections)</span> Линии между уликами и выводами, указывающие взаимосвязь. На доске отображаются как красные нити.</li>
-                    <li class="mb-2"><span class="badge bg-danger me-2">Выводы (Conclusions)</span> Логические умозаключения, которые можно построить через связь зацепок. Также можно соединять улики с другими выводами или выводы с выводами. На доске отображаются как стикеры</li>
-                    <li class="mb-2"><span class="badge bg-danger me-2">Квесты (Quests)</span> задания, которые нужно выполнить (основные и побочные) выбрав подходящий вывод. На доске будут представлены как красные стикеры</li>
+                    <li class="mb-2"><span class="badge bg-danger me-2">Выводы (Conclusions)</span> Логические умозаключения, которые можно построить через связь зацепок или других выводов. На доске отображаются как стикеры</li>
+                    <li class="mb-2"><span class="badge bg-danger me-2">Квесты (Quests)</span> задания (основные и побочные), которые нужно выполнить выбрав один из выводов. На доске будут представлены как красные стикеры</li>
                 </ul>
             </div>
             <div class="col-lg-6">
@@ -144,10 +144,10 @@
                     <div class="card-body">
                         <h3 class="card-title">1. Сбор</h3>
                         <ul>
-                            <li>Исследование локации и предметов на ней. Все доступные интерактивные предметы визуально подсвечиваются, когда попадают в поле зрения. </li>
-                            <li>Предметы можно рассмотреть или забрать в инвентарь. С одного предметы можно получить несколько зацепок.</li>
-                            <li>Зацепки отличаются по редкости и важности для нарратива.</li>
-                            <li>Диалоги с NPC открывают квесты и зацепки</li>
+                            <li>Все доступные интерактивные предметы визуально подсвечиваются, когда попадают в поле зрения. </li>
+                            <li>Предметы можно рассмотреть или забрать в инвентарь. С одного предмета можно получить несколько зацепок.</li>
+                            <li>Зацепки отличаются по редкости и важности для сюжета.</li>
+                            <li>Диалоги с NPC открывают квесты и новые зацепки</li>
                         </ul>
                     </div>
                 </div>
@@ -158,8 +158,10 @@
                         <h3 class="card-title">2. Анализ</h3>
                         <ul>
                             <li>Размещение зацепок на доске</li>
-                            <li>Создание связей между элементами</li>
-                            <li>Формирование выводов</li>
+                            <li>Каждая зацепка при наведении показывает подробную информацию о том как и где она была получена</li>
+                            <li>Комбинирование зацепок и выводов друг с другом. Определенные комбинации открывают на выбор новые выводы.</li>
+                            <li>Комментарии от персонажа с подсказками по возможным комбинациям.</li>
+                            <li><b>Открытие вывода имеет последствие на игровой мир и диалоги</b></li>
                         </ul>
                     </div>
                 </div>
@@ -169,9 +171,8 @@
                     <div class="card-body">
                         <h3 class="card-title">3. Решение</h3>
                         <ul>
-                            <li>Выбор выводов для квестов</li>
-                            <li>Множественные варианты решений</li>
-                            <li>Изменение мира и диалогов</li>
+                            <li>Для решения квеста нужен всего один вывод, хотя подходят многие.</li>
+                            <li><b>Решение квеста имеет последствия на игровой мир и диалоги</b></li>
                         </ul>
                     </div>
                 </div>
@@ -179,33 +180,33 @@
         </div>
     </section>
 
-    <!-- USP Section -->
+    <!-- Feature Section -->
     <section class="bg-danger text-white py-5 mb-5">
         <div class="container">
-            <h2 class="text-center fw-bold mb-4">Уникальные преимущества</h2>
+            <h2 class="text-center fw-bold mb-4">Особенности</h2>
             <div class="row g-4">
                 <div class="col-md-6">
                     <div class="p-4">
-                        <h3>Инновационная механика</h3>
-                        <p>Гибкая система детективной доски, где каждая зацепка может быть связана множеством способов, создавая уникальный опыт для каждого игрока.</p>
+                        <h3>Реиграбельность</h3>
+                        <p>Каждая зацепка может быть связана множеством способов, создавая уникальный опыт для каждого игрока.</p>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="p-4">
-                        <h3>Нелинейный сторителлинг</h3>
-                        <p>Десятки возможных концовок каждого дела, основанных на выводах игрока. Мир реагирует на каждое ваше решение.</p>
+                        <h3>Нелинейность</h3>
+                        <p>Несколько возможных концовок, основанных на выводах игрока. Мир реагирует на каждое решение.</p>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="p-4">
-                        <h3>Аутентичная атмосфера</h3>
-                        <p>Реалистичная система расследований, вдохновленная реальными детективными практиками и популярными сериалами.</p>
+                        <h3>Атмосфера</h3>
+                        <p>Основа локации собирается из готового ассета.</p>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="p-4">
-                        <h3>Доступная сложность</h3>
-                        <p>Интуитивный интерфейс с системой подсказок для новичков и глубокой механикой для опытных игроков.</p>
+                        <h3>Challenge</h3>
+                        <p>Редкие и сложнодоступные зацепки дают доступ к эксклюзивным поворотам сюжета</p>
                     </div>
                 </div>
             </div>
@@ -214,77 +215,31 @@
 
     <!-- Roadmap -->
     <section class="container py-5">
-        <h1 class="text-center mb-5">Roadmap</h1>
+        <h1 class="text-center mb-5">План разработки на 4 недели</h1>
 
         <ul class="nav nav-pills mb-5 justify-content-center" id="pills-tab" role="tablist">
             <li class="nav-item" role="presentation">
-                <button class="nav-link active" id="pills-all-tab" data-bs-toggle="pill" data-bs-target="#pills-all" type="button" role="tab">Общий план</button>
+                <button class="nav-link active" id="pills-writer-tab" data-bs-toggle="pill" data-bs-target="#pills-writer" type="button" role="tab">Сценарий</button>
             </li>
             <li class="nav-item" role="presentation">
-                <button class="nav-link" id="pills-programmer-tab" data-bs-toggle="pill" data-bs-target="#pills-programmer" type="button" role="tab">Код</button>
+                <button class="nav-link " id="pills-programmer-tab" data-bs-toggle="pill" data-bs-target="#pills-programmer" type="button" role="tab">Код</button>
             </li>
             <li class="nav-item" role="presentation">
                 <button class="nav-link" id="pills-artist-tab" data-bs-toggle="pill" data-bs-target="#pills-artist" type="button" role="tab">Арт</button>
             </li>
-            <li class="nav-item" role="presentation">
-                <button class="nav-link" id="pills-writer-tab" data-bs-toggle="pill" data-bs-target="#pills-writer" type="button" role="tab">Сценарий</button>
-            </li>
         </ul>
 
         <div class="tab-content" id="pills-tabContent">
-            <!-- Общий план -->
-            <div class="tab-pane fade show active" id="pills-all" role="tabpanel">
-                <div class="row">
-                    <div class="col-md-4 mb-4">
-                        <div class="card h-100">
-                            <div class="card-body">
-                                <h3 class="card-title programmer">Неделя 1-2</h3>
-                                <ul>
-                                    <li>Прототип детективной доски</li>
-                                    <li>Система зацепок и связей</li>
-                                    <li>Базовый UI/UX</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 mb-4">
-                        <div class="card h-100">
-                            <div class="card-body">
-                                <h3 class="card-title artist">Неделя 3-4</h3>
-                                <ul>
-                                    <li>Концепт-арты персонажей</li>
-                                    <li>Дизайн локаций</li>
-                                    <li>Стиль интерфейса</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 mb-4">
-                        <div class="card h-100">
-                            <div class="card-body">
-                                <h3 class="card-title writer">Неделя 5-6</h3>
-                                <ul>
-                                    <li>Сюжет первого дела</li>
-                                    <li>Диалоги персонажей</li>
-                                    <li>Варианты концовок</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
             <!-- Программист -->
-            <div class="tab-pane fade" id="pills-programmer" role="tabpanel">
-                <h2 class="role-header programmer">План программиста</h2>
+            <div class="tab-pane fade " id="pills-programmer" role="tabpanel">
+                <h2 class="role-header programmer">Для программиста</h2>
                 <div class="timeline">
                     <div class="timeline-item">
                         <div class="timeline-content">
                             <h4>Неделя 1</h4>
                             <ul>
-                                <li>Базовая система перетаскивания элементов</li>
-                                <li>Создание связей между зацепками</li>
-                                <li>Система сохранения состояния доски</li>
+                                <li>Inventory system</li>
+                                <li>Evidence board system</li>
                             </ul>
                         </div>
                     </div>
@@ -292,9 +247,10 @@
                         <div class="timeline-content">
                             <h4>Неделя 2</h4>
                             <ul>
-                                <li>Механика формирования выводов</li>
-                                <li>Интеграция системы квестов</li>
-                                <li>Базовый инвентарь зацепок</li>
+                                <li>Dialog system</li>
+                                <li>Анимации</li>
+                                <li>Story system</li>
+                                <li>MVC одного квеста</li>
                             </ul>
                         </div>
                     </div>
@@ -302,9 +258,7 @@
                         <div class="timeline-content">
                             <h4>Неделя 3</h4>
                             <ul>
-                                <li>Система реакций мира на выводы</li>
-                                <li>Интеграция диалоговой системы</li>
-                                <li>Оптимизация работы с большим количеством элементов</li>
+                                <li>Альфа билд для тестирования</li>
                             </ul>
                         </div>
                     </div>
@@ -312,9 +266,9 @@
                         <div class="timeline-content">
                             <h4>Неделя 4</h4>
                             <ul>
-                                <li>Система подсказок и обучения</li>
-                                <li>ИИ для NPC (базовое поведение)</li>
-                                <li>Интеграция контента от художника и сценариста</li>
+                                <li>Bugfix</li>
+                                <li>Оптимизация под itch.io</li>
+                                <li>Финтифлюшки</li>
                             </ul>
                         </div>
                     </div>
@@ -323,35 +277,24 @@
 
             <!-- Художник -->
             <div class="tab-pane fade" id="pills-artist" role="tabpanel">
-                <h2 class="role-header artist">План художника</h2>
+                <h2 class="role-header artist">План художников</h2>
                 <div class="timeline">
                     <div class="timeline-item">
                         <div class="timeline-content">
                             <h4>Неделя 1</h4>
                             <ul>
-                                <li>Концепт детективной доски</li>
-                                <li>Стиль интерфейса</li>
-                                <li>Дизайн основных элементов (зацепки, связи, выводы)</li>
+                                <li>Концепт детективной доски в 2d</li>
+                                <li>Дизайн основных элементов (зацепки, связи, выводы, квесты)</li>
                             </ul>
                         </div>
                     </div>
                     <div class="timeline-item">
                         <div class="timeline-content">
-                            <h4>Неделя 2</h4>
+                            <h4>Неделя 2-3</h4>
                             <ul>
-                                <li>Персонажи: главный герой и ключевые NPC</li>
-                                <li>Экспрессии и анимации персонажей</li>
-                                <li>Дизайн локаций (первая сцена преступления)</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-content">
-                            <h4>Неделя 3</h4>
-                            <ul>
-                                <li>Предметы и зацепки (фотографии, документы)</li>
-                                <li>Эффекты для интерактивных элементов</li>
+                                <li>Изображения предметов и зацепок на доске</li>
                                 <li>Дизайн меню и HUD</li>
+                                <li>Скетчи и зарисовки основных поворотов сюжета</li>
                             </ul>
                         </div>
                     </div>
@@ -359,9 +302,8 @@
                         <div class="timeline-content">
                             <h4>Неделя 4</h4>
                             <ul>
-                                <li>Дополнительные локации</li>
-                                <li>Анимации интерфейса</li>
-                                <li>Подготовка ассетов для программиста</li>
+                                <li>Дизайн презентации проекта</li>
+                                <li>Страница проекта на itch.io</li>
                             </ul>
                         </div>
                     </div>
@@ -369,7 +311,7 @@
             </div>
 
             <!-- Сценарист -->
-            <div class="tab-pane fade" id="pills-writer" role="tabpanel">
+            <div class="tab-pane fade show active" id="pills-writer" role="tabpanel">
                 <h2 class="role-header writer">План сценариста</h2>
                 <div class="timeline">
                     <div class="timeline-item">
@@ -377,25 +319,11 @@
                             <h4>Неделя 1</h4>
                             <ul>
                                 <li>Основная сюжетная арка</li>
-                                <li>Персонажи и их мотивации</li>
-                                <li>Структура первого дела</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-content">
-                            <h4>Неделя 2</h4>
-                            <ul>
-                                <li>Диалоги для ключевых персонажей</li>
-                                <li>Варианты вопросов для допросов</li>
+                                <li>Персонажи и их мотивация</li>
+                                <li>Структура первого обучающего квеста</li>
+                                <li>Структура основного квеста</li>
+                                <li>Структура побочных квестов</li>
                                 <li>Описание возможных зацепок</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-content">
-                            <h4>Неделя 3</h4>
-                            <ul>
                                 <li>Альтернативные сценарии развития</li>
                                 <li>Варианты концовок</li>
                                 <li>Реакции мира на разные выводы</li>
@@ -404,11 +332,10 @@
                     </div>
                     <div class="timeline-item">
                         <div class="timeline-content">
-                            <h4>Неделя 4</h4>
+                            <h4>Неделя 2-3</h4>
                             <ul>
-                                <li>Побочные квесты и истории</li>
-                                <li>Дополнительные диалоги</li>
-                                <li>Интеграция текстов с игровыми механиками</li>
+                                <li>Диалоги для ключевых персонажей</li>
+                                <li>Игровой текст</li>
                             </ul>
                         </div>
                     </div>
@@ -425,16 +352,16 @@
                     <div class="card-body">
                         <ul class="list-group list-group-flush">
                             <li class="list-group-item d-flex justify-content-between align-items-center">
-                                Рабочий прототип доски
+                                Готовый сценарий
+                                <span class="badge bg-primary rounded-pill">Неделя 1</span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                Первый полноценный квест
                                 <span class="badge bg-primary rounded-pill">Неделя 2</span>
                             </li>
                             <li class="list-group-item d-flex justify-content-between align-items-center">
-                                Первое полноценное дело
-                                <span class="badge bg-primary rounded-pill">Неделя 4</span>
-                            </li>
-                            <li class="list-group-item d-flex justify-content-between align-items-center">
                                 Альфа-версия для тестирования
-                                <span class="badge bg-primary rounded-pill">Неделя 6</span>
+                                <span class="badge bg-primary rounded-pill">Неделя 3</span>
                             </li>
                         </ul>
                     </div>
@@ -443,13 +370,12 @@
             <div class="col-md-6">
                 <div class="card">
                     <div class="card-header bg-danger text-white">
-                        <h3 class="mb-0">Зависимости между командами</h3>
+                        <h3 class="mb-0">Зависимости</h3>
                     </div>
                     <div class="card-body">
                         <ul>
-                            <li>Программист начинает с базовых механик до интеграции контента</li>
-                            <li>Художник предоставляет первые ассеты к 3 неделе</li>
-                            <li>Сценарист завершает основной сюжет до начала полной разработки</li>
+                            <li>Художникам нужен сюжет к концу 1 недели</li>
+                            <li>Кодерам нужен арт к концу 3 недели</li>
                         </ul>
                     </div>
                 </div>
