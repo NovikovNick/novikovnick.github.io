@@ -1,6 +1,8 @@
 
-import Vt from "react-vertical-timeline-component";
+import Vt from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
+
+const {VerticalTimeline, VerticalTimelineElement} = Vt;
 
 export default function ExperienceTimeline() {
     const bgColor = "#434659";
@@ -29,26 +31,26 @@ export default function ExperienceTimeline() {
             date: "2015 - 2017",
             position: "Java Developer",
             company: "ANT inform",
-            responsibilities: "Поддержка web-портала, интеграция workflow движка для документооборота и ЭЦП."
+            responsibilities: "Поддержка web-портала, интеграция workflow движка для документооборота и электронной цифровой подписи."
         }
     ];
     return (
-        <div class="overflow-hidden">
-            <Vt.VerticalTimeline>
-                {
-                    data.map(it => <Vt.VerticalTimelineElement
-                        date={it.date}
-                        className={style.className}
-                        contentStyle={style.contentStyle}
-                        contentArrowStyle={style.contentArrowStyle}
-                        iconStyle={style.iconStyle}
-                    >
-                        <h3 className="vertical-timeline-element-title">{it.position}</h3>
-                        <h4 className="vertical-timeline-element-subtitle">{it.company}</h4>
-                        <p>{it.responsibilities}</p>
-                    </Vt.VerticalTimelineElement>)
-                }
-            </Vt.VerticalTimeline>
+        <div className="overflow-hidden">
+            {/*<VerticalTimeline visible={true}  >*/}
+            {/*    {*/}
+            {/*        data.map(it => <VerticalTimelineElement*/}
+            {/*            date={it.date}*/}
+            {/*            className={style.className}*/}
+            {/*            contentStyle={style.contentStyle}*/}
+            {/*            contentArrowStyle={style.contentArrowStyle}*/}
+            {/*            iconStyle={style.iconStyle}*/}
+            {/*        >*/}
+            {/*            <h3 className="vertical-timeline-element-title">{it.position}</h3>*/}
+            {/*            <h4 className="vertical-timeline-element-subtitle">{it.company}</h4>*/}
+            {/*            <p>{it.responsibilities}</p>*/}
+            {/*        </VerticalTimelineElement>)*/}
+            {/*    }*/}
+            {/*</VerticalTimeline>*/}
         </div>
     )
 }

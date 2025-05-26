@@ -1,0 +1,24 @@
+@font-face {
+    font-family: 'Handwritten';
+    src: url(/fonts/UraBumBumSP.otf) format("opentype");
+}
+
+@font-face {
+    font-family: 'ScaryTitle';
+    src: url(/fonts/NoirFilled.ttf) format("truetype");
+}
+
+.noir-content {
+    font-size: 20px;
+    font-family:  serif;
+    width: 800px;
+}
+
+.noir-evidence-board-container {
+    min-width: 800px;
+}
+
+.noir-title {
+    font-size: 48px;
+    font-family: 'ScaryTitle', serif;
+}

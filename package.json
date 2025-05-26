@@ -10,12 +10,20 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/react": "^3.4.0",
-    "@types/react": "^18.3.3",
-    "@types/react-dom": "^18.3.0",
-    "astro": "^4.9.2",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "react-vertical-timeline-component": "^3.6.0"
+    "@astrojs/mdx": "^4.3.0",
+    "@astrojs/react": "^4.3.0",
+    "@types/react": "^19.1.5",
+    "@types/react-dom": "^19.1.5",
+    "astro": "^5.8.0",
+    "bootstrap": "^5.3.6",
+    "canvas": "^3.1.0",
+    "konva": "^9.3.20",
+    "react": "^19.1.0",
+    "react-bootstrap": "^2.10.10",
+    "react-dom": "^19.1.0",
+    "react-konva": "^19.0.3",
+    "react-konva-utils": "^1.1.0",
+    "react-vertical-timeline-component": "^3.6.0",
+    "use-image": "^1.1.2"
   }
 }
