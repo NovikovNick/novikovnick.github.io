@@ -1,3 +1,11 @@
+:root {
+    --sticker-color: #d5b515;
+    --sticker-color-hover: #d54815;
+
+    --layout-main-height: 65vh;
+    --layout-control-height: 35vh;
+}
+
 @font-face {
     font-family: 'Handwritten';
     src: url(/fonts/UraBumBumSP.otf) format("opentype");
@@ -8,17 +16,50 @@
     src: url(/fonts/NoirFilled.ttf) format("truetype");
 }
 
-.noir-content {
-    font-size: 20px;
-    font-family:  serif;
-    width: 800px;
+.game-layout-main-container {
+    height: var(--layout-main-height);
+    margin: 0;
+    padding: 0;
+}
+.game-evidence-board-container {
+    background: url("/cork.jpg") repeat;
+}
+.game-content-container {
+    height: var(--layout-main-height);
 }
 
-.noir-evidence-board-container {
-    min-width: 800px;
+.game-layout-control-container {
+    height: var(--layout-control-height);
+    margin: 0;
+    padding: 0;
+}
+.game-control-default-container {
+    height: var(--layout-control-height);
+    margin: 0;
+    padding: 0;
+}
+.game-content-clue{
+    color: white;
+}
+.game-content-clue:hover {
+    color: var(--sticker-color-hover);
+    cursor: pointer;
 }
 
-.noir-title {
-    font-size: 48px;
-    font-family: 'ScaryTitle', serif;
+.game-clue-detail {
+    position: fixed;
+    background: black;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    transition: 0.75s ease-in-out;
+}
+
+.game-clue-detail-test {
+    transition: 0.75s ease-in-out;
+}
+
+.game-clue-detail.game-clue-detail-reverse {
+    transform: translateX(100%);
 }

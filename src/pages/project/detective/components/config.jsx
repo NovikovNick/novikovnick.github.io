@@ -1,79 +1,78 @@
-export const INITIAL_STATE = {
-    clues: {
-        clue1: {
-            x: 0,
-            y: 60,
-            title: "Клиент\nкурит\nсигареты",
-            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi accumsan interdum risus, at vestibulum est bibendum et. Proin sed cursus augue. Aliquam tincidunt fringilla orci, id consectetur massa hendrerit nec. In elementum eget nunc in egestas. Integer sodales vestibulum fermentum. Pellentesque ac enim cursus, egestas elit ut, mattis quam. Nullam quis nisi vitae elit porttitor placerat. Ut dolor purus, pellentesque at magna vel, auctor convallis metus. Proin viverra sodales risus, ut aliquet enim hendrerit sit amet. Phasellus id purus diam."
-        },
-        clue2: {
-            x: 110,
-            y: 60,
-            title: "В\nкармане\nесть\nдешевые\nсигареты",
-            description: "In elementum eget nunc in egestas. Integer sodales vestibulum fermentum. Pellentesque ac enim cursus, egestas elit ut, mattis quam."
-        },
-        clue3: {
-            x: 0,
-            y: 180,
-            title: "На\nстоле\nесть\nдешевый\nвиски",
-            description: "In elementum eget nunc in egestas. Integer sodales vestibulum fermentum. Pellentesque ac enim cursus, egestas elit ut, mattis quam. Nullam quis nisi vitae elit porttitor placerat. Ut dolor purus, pellentesque at magna vel, auctor convallis metus. Proin viverra sodales risus, ut aliquet enim hendrerit sit amet. Phasellus id purus diam."
-        },
-        clue4: {
-            x: 0,
-            y: 60,
-            title: "Предложить\nвиски",
-            description: "Pellentesque ac enim cursus, egestas elit ut, mattis quam. Nullam quis nisi vitae elit porttitor placerat. Ut dolor purus, pellentesque at magna vel, auctor convallis metus. Proin viverra sodales risus, ut aliquet enim hendrerit sit amet. Phasellus id purus diam.",
-            isConclusion: true,
-        },
-        clue5: {
-            x: 0,
-            y: 60,
-            title: "Предложить\nсигареты",
-            description: "Ut dolor purus, pellentesque at magna vel, auctor convallis metus. Proin viverra sodales risus, ut aliquet enim hendrerit sit amet. Phasellus id purus diam.",
-            isConclusion: true,
-        },
-    },
-    quests: {
-        quest1: {
-            x: 300,
-            y: 30,
-            title: "Произвести\nхорошее\nвпечатление\nна клиента",
-            solutions: ['clue4', 'clue5']
-        }
-    },
-    connections: {},
-    conclusions: {
-        "clue1_clue2_connection": {
-            title: "Клиенту понравятся сигареты",
-            clues: ['clue1', 'clue2'],
-            open_clue: ['clue5'],
-            description: "Клиенту\nпонравятся\nсигареты",
-        },
-        "clue1_clue3_connection": {
-            title: "Клиенту понравится виски",
-            clues: ['clue1', 'clue3'],
-            open_clue: ['clue4'],
-            description: "Клиенту\nпонравятся\nвиски",
-        },
-    },
+export function toConnId(lhs_id, rhs_id) {
+    if (lhs_id > rhs_id) return toConnId(rhs_id, lhs_id);
+    return lhs_id + "_" + rhs_id + "_connection";
+}
+
+export const KEYS = {
+    clue_00_visit_1st_apartment: "clue_00_visit_1st_apartment",
+    clue_01: "clue_01",
+
+    story_000_start: "story_000_start",
+    story_001_check_messages: "story_001_check_messages",
+    story_002_check_news: "story_002_check_news",
+    story_003_room: "story_003_get_up",
+}
+
+export const DATA = {
+    clues: {},
+    story: {},
+    actions: {},
 };
 
+/**         CLUE        **/
+
+DATA.clues[KEYS.clue_00_visit_1st_apartment] = {
+    title: "Меня зовут\nв квартиру\nномер 1",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi accumsan interdum risus, at vestibulum est bibendum et. Proin sed cursus augue. Aliquam tincidunt fringilla orci, id consectetur massa hendrerit nec. In elementum eget nunc in egestas. Integer sodales vestibulum fermentum. Pellentesque ac enim cursus, egestas elit ut, mattis quam. Nullam quis nisi vitae elit porttitor placerat. Ut dolor purus, pellentesque at magna vel, auctor convallis metus. Proin viverra sodales risus, ut aliquet enim hendrerit sit amet. Phasellus id purus diam."
+}
+
+DATA.clues[KEYS.clue_01] = {
+    title: "Тестовая",
+    description: "Proin sed cursus augue. Aliquam tincidunt fringilla orci, id consectetur massa hendrerit nec. In elementum eget nunc in egestas. Integer sodales vestibulum fermentum. Pellentesque ac enim cursus, egestas elit ut, mattis quam. Nullam quis nisi vitae elit porttitor placerat. Ut dolor purus, pellentesque at magna vel, auctor convallis metus. Proin viverra sodales risus, ut aliquet enim hendrerit sit amet. Phasellus id purus diam."
+}
+
+/**         STORY        **/
+
+DATA.story[KEYS.story_000_start] = {
+    default_actions: [
+        {title: "Проверить сообщения", dst_story_id: KEYS.story_001_check_messages},
+        {title: "Проверить новости", dst_story_id: KEYS.story_002_check_news},
+        {title: "Встать с кровати", dst_story_id: KEYS.story_003_room},
+    ],
+    possible_actions: []
+}
+DATA.story[KEYS.story_001_check_messages] = {
+    default_actions: [{title: "Назад", dst_story_id: KEYS.story_000_start}],
+    possible_actions: []
+}
+DATA.story[KEYS.story_002_check_news] = {
+    default_actions: [{title: "Назад", dst_story_id: KEYS.story_000_start}],
+    possible_actions: []
+}
+DATA.story[KEYS.story_003_room] = {default_actions: [
+        {title: "Проверить записи", dst_story_id: KEYS.story_000_start},
+        {title: "Выглянуть в окно", dst_story_id: KEYS.story_001_check_messages},
+        {title: "Пойти на кухню", dst_story_id: KEYS.story_002_check_news},
+    ], possible_actions: []}
+
+/**         CONCLUSIONS        **/
+
+DATA.actions[toConnId(KEYS.clue_00_visit_1st_apartment, KEYS.clue_01)] = {
+    id: toConnId(KEYS.clue_00_visit_1st_apartment, KEYS.clue_01),
+    title: "Открыть дверь",
+    related_story_id: KEYS.story_000_start,
+    transition_story_id: KEYS.story_001_check_messages,
+    description: "Клиенту\nпонравятся\nсигареты",
+}
+
+/**         STYLE        **/
+
 export const STYLE = {
-    quest: {
-        base: {
-            width: 100,
-            height: 110,
-            fill: "red",
-            stroke: "black",
-            strokeWidth: 2,
-            cornerRadius: 2,
-        }
-    },
     clue: {
         base: {
             width: 100,
-            height: 110,
-            fill: "yellow",
+            height: 100,
+            fill: "#d5b515",
             stroke: 'black',
             strokeWidth: 1,
             cornerRadius: 2,
@@ -88,7 +87,6 @@ export const STYLE = {
             rotation: 1
         },
         select: {
-            fill: "#ff9b00",
             strokeWidth: 3,
         },
         drag: {
@@ -98,7 +96,7 @@ export const STYLE = {
     },
     pin: {
         base: {
-            fill: "red",
+            fill: '#b60000',
             stroke: 'black',
             strokeWidth: 0.5,
 
@@ -110,7 +108,7 @@ export const STYLE = {
     },
     connection: {
         base: {
-            stroke: 'red',
+            stroke: '#b60000',
             strokeWidth: 4,
             lineCap: "round",
             lineJoin: "round",
@@ -125,8 +123,9 @@ export const STYLE = {
 }
 
 export const LAYOUT = {
-    width: 800,
+    width: 1024,
     height: 600,
-    board_left_offset: 220,
-    board_top_offset: 20,
+    board_left_offset: 0,
+    board_top_offset: 0,
+    clue_default_pos: {x: 10, y: 10},
 }

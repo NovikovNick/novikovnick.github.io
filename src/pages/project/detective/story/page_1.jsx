@@ -1,17 +1,17 @@
-import {Container, Button} from 'react-bootstrap';
+import {KEYS} from "../components/config.jsx";
 
-export default function App({OnContinue})  {
+export default function Page({OnClueDetected}) {
     return (
-        <Container className="p-5">
-            <h1 className={'noir-title p-5 text-center'}>True Noir Detective</h1>
-            <div className="noir-content m-auto text-center">
-                <p>
-                    Посетительница выплеснула виски в лицо Винсента...
-                </p>
-                <p className="text-center">
-                    КОНЕЦ
-                </p>
-            </div>
-        </Container>
+        <div className={'animate__animated animate__fadeIn'}>
+            <p className="m-0 p-0">
+                У вас одно непрочитанное сообщение от незнакомого профиля. На аватарке лысый мужик лет 45 демонстрирует рыбу.
+            </p>
+            <p className={'p-5 game-content-clue animate__animated animate__headShake animate__delay-1s'} onClick={() => OnClueDetected(KEYS.clue_00_visit_1st_apartment)}>
+                Здравствуйте, я по объявлению. Зайдите ко мне завтра в 1 квартиру.
+            </p>
+            <p className={'p-5 game-content-clue animate__animated animate__headShake animate__delay-1s'} onClick={() => OnClueDetected(KEYS.clue_01)}>
+                adsf
+            </p>
+        </div>
     );
 };

@@ -2,7 +2,7 @@ export default function Page({OnClueDetected}) {
     return (
         <div className={'animate__animated animate__fadeIn'}>
             <p className="m-0 p-0">
-                Пишут про войну...
+                Пу пу пу
             </p>
         </div>
     );
