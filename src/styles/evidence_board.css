@@ -21,7 +21,14 @@
     margin: 0;
     padding: 0;
 }
+
 .game-evidence-board-container {
+    height: var(--layout-main-height);
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+.game-evidence-board{
     background: url("/cork.jpg") repeat;
 }
 .game-content-container {
@@ -37,6 +44,7 @@
     height: var(--layout-control-height);
     margin: 0;
     padding: 0;
+    overflow: auto;
 }
 .game-content-clue{
     color: white;

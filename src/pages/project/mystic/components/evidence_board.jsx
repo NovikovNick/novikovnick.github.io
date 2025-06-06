@@ -94,82 +94,101 @@ export default function EvidenceBoard({onClueHoverStart, onClueHoverEnd, onConne
         onConnectionChange(connections);
     };
 
-    const clues = Object.entries(clues_data || {}).map(([id, clue], _) => (
-        <Portal key={id} selector=".top-layer" enabled={on_drag_clue && !on_drag && id === selected_clue_id}>
-            <Group
-                x={clue.x}
-                y={clue.y}
-                draggable
-                onMouseDown={() => {
-                    setOnDragClue(true);
-                    selectClueId(id)
-                }}
-                onMouseUp={() => {
-                    setOnDrag(false);
-                    setOnDragClue(false);
+    const clues = Object.entries(clues_data || {}).map(([id, clue], _) => {
+        const onTouchClueStart = () => {
+            setOnDragClue(true);
+            selectClueId(id)
+        };
+        const onTouchClueEnd = () => {
+            setOnDrag(false);
+            setOnDragClue(false);
 
-                    if (selected_clue_id !== id) createConnection(id, selected_clue_id);
-                }}
-                onMouseEnter={(e) => {
-                    document.body.style.cursor = 'pointer';
-                    hoverClueId(id);
-                    onClueHoverStart(id);
-                }}
-                onMouseLeave={(e) => {
-                    document.body.style.cursor = 'default';
-                    hoverClueId("");
-                    onClueHoverEnd();
-                }}
-                onDragMove={(e) => {
-                    if (!on_drag) handleClueDragMove(e, id)
-                }}>
+            if (selected_clue_id !== id) createConnection(id, selected_clue_id);
+        };
+        const onTouchPinStart = () => {
+            selectClueId(id)
+            setOnDrag(true)
+            setNewConnectionStart({x: 0, y: 0});
+            setNewConnectionEnd({x: 0, y: 0})
+        };
+        const onTouchPinEnd = () => setOnDrag(false);
+        return (
+            <Portal key={id} selector=".top-layer" enabled={on_drag_clue && !on_drag && id === selected_clue_id}>
+                <Group
+                    x={clue.x}
+                    y={clue.y}
+                    draggable
+                    onTouchStart={onTouchClueStart}
+                    onTouchEnd={onTouchClueEnd}
+                    onMouseDown={onTouchClueStart}
+                    onMouseUp={onTouchClueEnd}
 
-                <Rect {...STYLE.clue.base}
-                      {...(id === hover_clue_id ? STYLE.clue.hover : null)}
-                      {...(id === selected_clue_id ? STYLE.clue.select : null)}
-                      {...(id === selected_clue_id && on_drag_clue ? STYLE.clue.drag : null)}
-                />
+                    onMouseEnter={(e) => {
+                        document.body.style.cursor = 'pointer';
+                        hoverClueId(id);
+                        onClueHoverStart(id);
+                    }}
+                    onMouseLeave={(e) => {
+                        document.body.style.cursor = 'default';
+                        hoverClueId("");
+                        onClueHoverEnd();
+                    }}
+                    onDragMove={(e) => {
+                        if (!on_drag) handleClueDragMove(e, id)
+                    }}>
 
-                <Text
-                    text={clue.title}
-                    fontSize={15}
-                    fontFamily={'Handwritten'}
-                    rotation={-5}
-                    x={5}
-                    y={15}
-                />
+                    <Rect {...STYLE.clue.base}
+                          {...(id === hover_clue_id ? STYLE.clue.hover : null)}
+                          {...(id === selected_clue_id ? STYLE.clue.select : null)}
+                          {...(id === selected_clue_id && on_drag_clue ? STYLE.clue.drag : null)}
+                    />
 
-                <Group visible={clue.x > LAYOUT.board_left_offset && !(on_drag_clue && id === selected_clue_id)}
-                       draggable
-                       dragBoundFunc={(pos) => {
-                           const start = {
-                               x: clue.x,
-                               y: clue.y
-                           };
-                           setNewConnectionStart(start)
-                           setNewConnectionEnd(pos)
-                           return start;
-                       }}
-                       onMouseDown={() => {
-                           selectClueId(id)
-                           setOnDrag(true)
-                           setNewConnectionStart({x: 0, y: 0});
-                           setNewConnectionEnd({x: 0, y: 0})
-                       }}
-                       onMouseUp={() => setOnDrag(false)}
-                       onMouseEnter={() => document.body.style.cursor = 'grab'}
-                       onMouseLeave={() => document.body.style.cursor = 'default'}
-                >
+                    <Text
+                        text={clue.title}
+                        fontSize={15}
+                        fontFamily={'Handwritten'}
+                        rotation={-5}
+                        x={5}
+                        y={15}
+                    />
 
-                    <Circle x={5} y={5} width={20} height={20} {...STYLE.pin.base} />
-                    <Circle width={15} height={15} {...STYLE.pin.base} />
+                    <Group visible={clue.x > LAYOUT.board_left_offset && !(on_drag_clue && id === selected_clue_id)}
+                           draggable
+                           onTouchStart={onTouchPinStart}
+                           onTouchEnd={onTouchPinEnd}
+                           onMouseDown={onTouchPinStart}
+                           onMouseUp={onTouchPinEnd}
+
+                           dragBoundFunc={(pos) => {
+                               const start = {
+                                   x: clue.x,
+                                   y: clue.y
+                               };
+                               setNewConnectionStart(start)
+                               setNewConnectionEnd(pos)
+                               return start;
+                           }}
+
+                           onMouseEnter={() => document.body.style.cursor = 'grab'}
+                           onMouseLeave={() => document.body.style.cursor = 'default'}
+                    >
+
+                        <Circle x={5} y={5} width={20} height={20} {...STYLE.pin.base} />
+                        <Circle width={15} height={15} {...STYLE.pin.base} />
+                    </Group>
                 </Group>
-            </Group>
-        </Portal>
-    ));
+            </Portal>
+        );
+    });
 
     const connections = Object.entries(connection_data).map(([clue_src_id, data], _) => {
         const start = data.src;
+        const removeLine = (clue_src_id, clue_dst_id) => {
+            connection_data[clue_src_id].peers = connection_data[clue_src_id].peers.filter(id => id !== clue_dst_id);
+            connection_data[clue_dst_id].peers = connection_data[clue_dst_id].peers.filter(id => id !== clue_src_id);
+            updateConnections(connection_data);
+            setHoverConnectionId("");
+        };
         return data.peers.map((clue_dst_id) => {
             const conn_id = toConnId(clue_src_id, clue_dst_id);
             return (<Line
@@ -178,13 +197,8 @@ export default function EvidenceBoard({onClueHoverStart, onClueHoverEnd, onConne
 
                 {...STYLE.connection.base}
                 {...(hover_connection_id === conn_id ? STYLE.connection.hover : null)}
-
-                onClick={(e) => {
-                    connection_data[clue_src_id].peers = connection_data[clue_src_id].peers.filter(id => id !== clue_dst_id);
-                    connection_data[clue_dst_id].peers = connection_data[clue_dst_id].peers.filter(id => id !== clue_src_id);
-                    updateConnections(connection_data);
-                    setHoverConnectionId("");
-                }}
+                onTap={() => removeLine(clue_src_id, clue_dst_id)}
+                onClick={() => removeLine(clue_src_id, clue_dst_id)}
                 onMouseEnter={() => {
                     document.body.style.cursor = 'pointer';
                     setHoverConnectionId(conn_id);
@@ -198,7 +212,7 @@ export default function EvidenceBoard({onClueHoverStart, onClueHoverEnd, onConne
     });
 
     return (
-        <Stage width={LAYOUT.width} height={LAYOUT.height} className={'game-evidence-board-container'}>
+        <Stage width={LAYOUT.width} height={LAYOUT.height} className={'game-evidence-board'}>
             <Layer onMouseUp={() => {
                 setOnDrag(false);
                 setOnDragClue(false);
